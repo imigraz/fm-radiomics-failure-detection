@@ -1,0 +1,28 @@
+# Tested environment (Python 3.10.0): the versions with which the paper's
+# numbers were reproduced.
+# Install with `python -m pip install -r requirements.txt`.
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.7.2
+threadpoolctl==3.6.0
+PyYAML==6.0.3
+pillow==12.2.0
+opencv-python==4.13.0.92
+# frd-score's OpenCV; pinned, since both packages install the cv2 module.
+opencv-contrib-python-headless==4.13.0.92
+simpleitk==2.5.5
+antspyx==0.6.3
+# pyradiomics: the PyPI release does not build for Python >= 3.10; install from GitHub.
+pyradiomics @ git+https://github.com/AIM-Harvard/pyradiomics.git@8ed579383b44806651c463d5e691f3b2b57522ab
+frd-score==1.0.1
+# FM backbones (DINOv3 is gated on Hugging Face; the token must allow gated repos).
+torch==2.7.1
+transformers==5.11.0
+huggingface_hub==1.16.1
+# The hf CLI (hf auth login) needs click, which newer typer versions drop.
+typer==0.25.1
+click==8.4.1
+# 3DINO needs its own environment (numpy<2); see Readme.md.
+# Unit tests (python -m pytest tests)
+pytest==9.1.1

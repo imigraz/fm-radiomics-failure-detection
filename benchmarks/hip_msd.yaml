@@ -1,0 +1,41 @@
+# Hippocampus: DecathHip is the reference site (the model's training data);
+# Dryad and HarP are query sites under population shift.
+
+name: hip_msd
+
+reference_site: DecathHip
+# Order matters: it fixes the bootstrap's random stream (do not reorder).
+query_sites:
+  - Dryad
+  - HarP
+
+# nnU-Net datasets (under datasets/)
+dataset_dirs:
+  DecathHip: Task097_DecathHip
+  Dryad:     Task098_Dryad
+  HarP:      Task099_HarP
+
+# Prediction folders inside predictions/fold_<k>/
+pred_dirs:
+  DecathHip: Preds_Task097_DecathHip
+  Dryad:     Preds_Task098_Dryad
+  HarP:      Preds_Task099_HarP
+
+# Per-fold validation JSON: which fold held out each reference case.
+fold_json_name: hip_val_metrics_val.json
+task_name_to_tag:
+  Task097_DecathHip: DecathHip
+  Task098_Dryad:     Dryad
+  Task099_HarP:      HarP
+
+# Dryad and HarP store both hippocampi in one volume; DecathHip one (mostly
+# left) hippocampus per volume. Split volumes of these sites at the
+# left-right midplane into <case>_L and <case>_R. Axis: 0 = x = left-right.
+bilateral_split_sites:
+  - Dryad
+  - HarP
+bilateral_split_axis: 0
+
+# Atlas-RCA: the references are left hippocampi and SyN cannot mirror, so R
+# halves are flipped to L before registration.
+atlas_flip_r_half: true

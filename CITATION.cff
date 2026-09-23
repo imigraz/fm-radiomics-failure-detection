@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Foundation Model and Radiomics Distance Scores for Post-Hoc Segmentation Failure Detection"
+type: software
+authors:
+  - family-names: Joham
+    given-names: Simon Johannes
+    orcid: "https://orcid.org/0009-0009-1817-2904"
+    affiliation: "Institute for Medical Informatics, Statistics and Documentation, Medical University of Graz"
+  - family-names: Guglielmo
+    given-names: Gianluca
+    orcid: "https://orcid.org/0009-0001-3446-7528"
+    affiliation: "Institute of Visual Computing, Graz University of Technology"
+  - family-names: Kozinski
+    given-names: Mateusz
+    orcid: "https://orcid.org/0000-0002-3187-518X"
+    affiliation: "Institute for Medical Informatics, Statistics and Documentation, Medical University of Graz"
+  - family-names: Urschler
+    given-names: Martin
+    orcid: "https://orcid.org/0000-0001-5792-3971"
+    affiliation: "Institute for Medical Informatics, Statistics and Documentation, Medical University of Graz"
+repository-code: "https://github.com/imigraz/fm-radiomics-failure-detection"
+license: Apache-2.0
+keywords:
+  - segmentation failure detection
+  - quality control
+  - foundation models
+  - radiomics
+  - out-of-distribution
+  - medical image segmentation
+preferred-citation:
+  type: conference-paper
+  title: "Foundation Model and Radiomics Distance Scores for Post-Hoc Segmentation Failure Detection"
+  authors:
+    - family-names: Joham
+      given-names: Simon Johannes
+      orcid: "https://orcid.org/0009-0009-1817-2904"
+    - family-names: Guglielmo
+      given-names: Gianluca
+      orcid: "https://orcid.org/0009-0001-3446-7528"
+    - family-names: Kozinski
+      given-names: Mateusz
+      orcid: "https://orcid.org/0000-0002-3187-518X"
+    - family-names: Urschler
+      given-names: Martin
+      orcid: "https://orcid.org/0000-0001-5792-3971"
+  collection-title: "Uncertainty for Safe Utilization of Machine Learning in Medical Imaging (UNSURE), MICCAI 2026 Workshop"
+  conference:
+    name: "UNSURE workshop at MICCAI 2026"
+  year: 2026

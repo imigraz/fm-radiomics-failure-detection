@@ -1,0 +1,42 @@
+# Prostate: multi-site T2 MRI (NCI-ISBI / I2CVB / PROMISE12 sites).
+# RUNMC is the reference site (the model's training data); the other five
+# sites are query sites under imaging-protocol shift.
+
+name: prostate_msd
+
+reference_site: RUNMC
+# Order matters: it fixes the bootstrap's random stream (do not reorder).
+query_sites:
+  - BMC
+  - I2CVB
+  - UCL
+  - BIDMC
+  - HK
+
+# nnU-Net datasets (under datasets/)
+dataset_dirs:
+  RUNMC: Task211_Prostate-RUNMC
+  BMC:   Task212_Prostate-BMC
+  I2CVB: Task213_Prostate-I2CVB
+  UCL:   Task214_Prostate-UCL
+  BIDMC: Task215_Prostate-BIDMC
+  HK:    Task216_Prostate-HK
+
+# Prediction folders inside predictions/fold_<k>/
+pred_dirs:
+  RUNMC: Preds_Task211_Prostate-RUNMC
+  BMC:   Preds_Task212_Prostate-BMC
+  I2CVB: Preds_Task213_Prostate-I2CVB
+  UCL:   Preds_Task214_Prostate-UCL
+  BIDMC: Preds_Task215_Prostate-BIDMC
+  HK:    Preds_Task216_Prostate-HK
+
+# Per-fold validation JSON: which fold held out each reference case.
+fold_json_name: val_metrics_val.json
+task_name_to_tag:
+  Task211_Prostate-RUNMC: RUNMC
+  Task212_Prostate-BMC:   BMC
+  Task213_Prostate-I2CVB: I2CVB
+  Task214_Prostate-UCL:   UCL
+  Task215_Prostate-BIDMC: BIDMC
+  Task216_Prostate-HK:    HK

@@ -1,0 +1,38 @@
+# Template for your own data. Copy it, fill in your site and folder names, and run
+#   python -m failure_scores.run --benchmark benchmarks/<your>.yaml --stage all
+# See "Using your own data" in the README for the expected folder layout.
+
+# Output subfolder: results go to outputs/<name>/.
+name: my_benchmark
+
+# Site the segmentation model was trained on (labelled; the reference set).
+reference_site: SiteRef
+# Sites to score. Their order fixes the bootstrap's random stream.
+query_sites:
+  - SiteA
+  - SiteB
+
+# nnU-Net dataset folder of each site, under datasets/ (or --data_root).
+dataset_dirs:
+  SiteRef: Task001_SiteRef
+  SiteA:   Task002_SiteA
+  SiteB:   Task003_SiteB
+
+# Prediction folder of each site inside predictions/fold_<k>/ (or --pred_root).
+pred_dirs:
+  SiteRef: Preds_Task001_SiteRef
+  SiteA:   Preds_Task002_SiteA
+  SiteB:   Preds_Task003_SiteB
+
+# Per-fold JSON in predictions/fold_<k>/ that lists the reference cases each fold
+# validated on (see the README), and the task names used as keys in that JSON.
+# Use a name of your own: val_metrics_val.json belongs to the prostate benchmark.
+fold_json_name: my_folds.json
+task_name_to_tag:
+  Task001_SiteRef: SiteRef
+
+# Optional: sites whose volumes contain a left and a right structure (e.g. both
+# hippocampi). Each half is scored as its own case (<case>_L, <case>_R).
+# bilateral_split_sites: [SiteA]
+# bilateral_split_axis: 0          # image axis between left and right (0 = x)
+# atlas_flip_r_half: true          # Atlas-RCA: mirror right halves before registering
