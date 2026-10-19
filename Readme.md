@@ -1,5 +1,7 @@
 # Foundation Model and Radiomics Distance Scores for Post-Hoc Segmentation Failure Detection
 
+![Overview.png](overview_figure.png)
+
 Code for the MICCAI UNSURE 2026 [paper](https://papers.miccai.org/miccai-2026-sat/UNSURE2026_036.html):
 
 > S. J. Joham, G. Guglielmo, M. Kozinski, M. Urschler.
